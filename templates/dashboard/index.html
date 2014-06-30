@@ -1,0 +1,99 @@
+<div data-role="content" class="container">
+	
+  <h1>RVB Calculator</h1>
+
+	<ul class="tab-nav tab-nav-pills">
+	  <li class="active valuesManual"><span>Enter Values</span></li>
+	  <li class="valuesAddress"><span>Get Values by Address</span></li>
+	</ul>
+  
+	<div class="well well-lg dNone" id="valuesZillow">
+		<div class="well-close valuesManual">&times;</div>
+    <form>
+    	<input type="text" id="rvbAddress" placeholder="Street Address" class="input-lg" />
+     	<input type="text" id="rvbAddress2" placeholder="Street Address 2" class="input-lg" />
+      
+      <div class="well well-sm">
+        <input type="text" id="rvbZip" placeholder="Zip" class="input-lg" />
+        <p> - OR - </p>
+        <input type="text" id="rvbCity" placeholder="City" class="input-lg" />
+        
+        <select id="rvbState" class="input-lg">
+          <option>- Select State -</option>
+        </select>
+      </div>
+      
+      <input type="button" class="btn btn-primary" id="btnGetData" value="Get Data" />
+      
+      <input type="button" class="btn btn-primary" id="btnEnterData" value="Enter Data Manually" />
+    
+    </form>
+  </div>
+
+	<div id="messages"></div>
+
+	<!-- RVB Calculator -->
+	<div id="rvbCalc">
+		<div class="well well-lg">
+    	<form id="rvbCalculator">
+				<label for="rvbRent">Estimated Rent</label>
+    		<input type="number" id="rvbRent" placeholder="Monthly Rent" class="input" />
+				<label for="rvbBuy">Estimated Value</label>
+     		<input type="number" id="rvbBuy" placeholder="Purchase Price" class="input" />
+				<label for="rvbDP" id="rvbDPLabel">Downpayment (%)<span></span></label>
+     		<input type="number" id="rvbDP" placeholder="%" class="input" value="20" />
+        <fieldset>
+          <label for="rvbDP">Mortgage Rate (%) <span>The rate provided is based on today's national average</span></label>
+          <select id="rvbTerm">
+            <option value="30">30 Year Fixed</option>
+            <option value="15">15 Year Fixed</option>
+          </select>
+          <input type="number" id="rvbRate" placeholder="%" class="input" />
+          <input type="hidden" id="rvbRate30" placeholder="%" class="input" />
+          <input type="hidden" id="rvbRate15" placeholder="%" class="input" />
+        </fieldset>
+				<label for="rvbTaxes">Annual Property Taxes (%)</label>
+     		<input type="text" id="rvbTaxes" placeholder="%" class="input" />
+				<label for="rvHpChange" id="rvHpChangeLabel">Annual Home Price Change +/- <span>3%</span></label>
+				<div id="rvHpChange" class="rvbSlider"></div>
+        <input type="hidden" value="3" id="rvHpChangeVal" />
+				<label for="rvRentChange" id="rvRentChangeLabel">Annual Rent Change + <span>3%</span></label>
+				<div id="rvRentChange" class="rvbSlider"></div>
+        <div id="rvbMonthly" class="rvbResult">Monthly Payment: <span></span></div>
+        <div id="rvbTotal" class="rvbResult">Total Paid: <span></span></div>
+        <div id="rvbInterest" class="rvbResult">Total Interest Paid: <span></span></div>
+        <input type="hidden" value="3" id="rvRentChangeVal" />
+      
+      	<input type="button" class="btn btn-primary left" id="calculateRBV" value="Calculate" />
+        
+        <input type="button" class="btn btn-primary" id="resetRBV" value="Reset" />
+
+    
+    	</form>
+      
+      <div id="rvbGraph" class="well dNone"></div>
+      
+      <div id="amortizationChart" class="well dNone">
+      	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+        	<thead>
+          	<tr>
+            	<th width="20%" align="left">Date</th>
+              <th width="20%" align="left">Payment Amount</th>
+              <th width="20%" align="left">Principal</th>
+              <th width="20%" align="left">Interest</th>
+              <!--<th>Taxes</th>-->
+              <th width="20%" align="left">Remaining Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+          
+          </tbody>
+        </table>
+      </div>
+      
+  	</div>
+	</div>
+	<!-- / RVB Calculator -->
+
+
+</div>

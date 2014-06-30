@@ -1,0 +1,42 @@
+define([
+    'jquery',
+    'underscore',
+    'backbone',
+    'iscroll',
+    'collections/events',
+    'text!templates/events/detail/eventdetail.html'
+], function($, _, Backbone, iScroll, eventsCollection, eventDetailTemplate) {
+
+    var eventDetailView = Backbone.View.extend({
+
+        initialize: function() {
+            console.log('eventDetailView initialize');
+            eventsCollection.bind('reset', this.render, this);
+        },
+
+        render: function() {
+            console.log('eventDetailView render');
+
+            if (typeof this.id !== 'undefined') {
+                this.eventItem = eventsCollection.get(this.id);
+    
+                if (typeof this.eventItem !== 'undefined') {
+                    $(this.el).html( _.template( eventDetailTemplate, { event: this.eventItem }));
+                    $(this.el).trigger('create');
+                }
+            }
+
+            return this;
+        },
+
+        setId: function(id) {
+            console.log('eventDetailView setId: ' + id);
+            this.id = id;
+            this.render();
+            return this;
+        }
+
+    });
+
+    return new eventDetailView;
+});

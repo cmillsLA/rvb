@@ -1,0 +1,17 @@
+define([
+    'jquery',
+    'underscore',
+    'backbone',
+    'router',
+    'jquery.mobile-config',
+    'jquery.mobile'
+], function($, _, Backbone, router) {
+    var initialize = function() {
+        console.log('app initialize');
+        router.initialize();
+    }
+    
+    return {
+        initialize: initialize
+    };
+});

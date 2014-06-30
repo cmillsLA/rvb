@@ -1,0 +1,14 @@
+define([
+  'underscore',
+  'backbone'
+], function(_, Backbone) {
+  var eventsModel = Backbone.Model.extend({
+
+    initialize: function(){
+      console.log('eventsModel initialize');
+    }
+
+  });
+
+  return eventsModel;
+});

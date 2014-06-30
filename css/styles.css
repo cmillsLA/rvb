@@ -1,0 +1,117 @@
+.nav a {
+	outline:none;
+}
+textarea,
+input[type="text"].input-lg,
+input[type="password"].input-lg,
+input[type="datetime"].input-lg,
+input[type="datetime-local"].input-lg,
+input[type="date"].input-lg,
+input[type="month"].input-lg,
+input[type="time"].input-lg,
+input[type="week"].input-lg,
+input[type="number"].input-lg,
+input[type="email"].input-lg,
+input[type="url"].input-lg,
+input[type="search"].input-lg,
+input[type="tel"].input-lg,
+input[type="color"].input-lg,
+.uneditable-input.input-lg,
+select.input-lg {
+	font-size:20px;
+	line-height:40px;
+	height:40px;
+}
+.dNone,
+#rvbRate15 {
+	display:none;
+}
+#loading {
+	position:fixed;
+	z-index:3;
+	width:100%;
+	height:100%;
+	background:#fff;
+	opacity:.5;
+	display:none;
+	top:0;
+	left:0;
+}
+.rvbSlider {
+	width:300px;
+}
+.btn-primary {
+	font-size:16px;
+	font-weight:bold;
+	padding:12px;
+}
+.rvbResult {
+	font-size:16px;
+	font-weight:bold;
+	padding:10px 0;
+	width:300px;
+}
+.rvbResult span {
+	float:right;
+}
+label {
+	width:300px;
+}
+label span {
+	float:right;
+	font-style:italic;
+	font-size:11px;
+}
+
+.well {
+	position:relative;
+}
+
+.tab-nav-pills {
+	list-style:none;
+	margin:0 0 10px 0;
+	padding:0;
+}
+
+.tab-nav-pills > li {
+	display:inline-block;
+}
+
+.tab-nav-pills > li > span {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+		background:#f0f0f0;
+}
+.tab-nav-tabs > li > span, .tab-nav-pills > li > span {
+    line-height: 14px;
+    margin-right: 2px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.tab-nav > li > span {
+    display: block;
+}
+.tab-nav span {
+    outline-color: -moz-use-text-color;
+    outline-style: none;
+    outline-width: medium;
+		cursor:pointer;
+}
+.tab-nav .active span {
+    background-color:rgb(58, 135, 173);
+		color:#fff;
+}
+
+.well-close {
+	font-size:22px;
+	position:absolute;
+	top:20px;
+	right:20px;
+	cursor:pointer;
+}

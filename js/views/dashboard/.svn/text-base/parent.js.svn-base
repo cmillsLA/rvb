@@ -1,0 +1,33 @@
+define([
+    'jquery',
+    'underscore',
+    'backbone',
+    'collections/events',
+    'text!templates/events/detail/parent.html',
+    'views/common/topbar',
+    'views/events/detail/eventdetail'
+], function($, _, Backbone, eventsCollection, parentTemplate, topbarView, eventDetailView) {
+    var eventDetailParentView = Backbone.View.extend({
+
+        initialize: function() {
+            console.log('eventDetailParentView initialize');
+            $(this.el).html(parentTemplate);
+            topbarView.setElement(this.$('#topbar')).setTitle('Dex').setShowBackBtn(true).render();
+            eventDetailView.setElement(this.$('#wrapper')).render();
+        },
+
+        render: function() {
+            console.log('eventDetailParentView render');
+            return this;
+        },
+
+        setId: function(id) {
+            console.log('eventDetailParentView setId: ' + id);
+            //this.id = id;
+            eventDetailView.setId(id);
+            return this;
+        }
+    
+    });
+    return new eventDetailParentView;
+});

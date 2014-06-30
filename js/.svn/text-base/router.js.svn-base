@@ -1,0 +1,55 @@
+define([
+  'jquery',
+  'underscore',
+  'backbone',
+  'views/common/menu',
+  'views/home/main/parent',
+  'views/events/list/parent',
+  'views/events/detail/parent'
+], function($, _, Backbone, menuView, mainHomeView, eventsListView, eventDetailView) {
+    var AppRouter = Backbone.Router.extend({
+
+        routes: {
+            'events': 'showEventsList',
+            'events/:id': 'showEventDetails',
+            '*actions': 'defaultAction'
+        },
+    
+        showEventsList: function() {
+            console.log("showEventsList");
+            this.changePage(eventsListView);
+        },
+    
+        showEventDetails: function(id) {
+            console.log("showEventDetails");
+            this.changePage(eventDetailView.setId(id));
+        },
+    
+        defaultAction: function(actions) {
+            console.log("defaultAction");
+            this.changePage(mainHomeView);
+        },
+    
+        changePage: function(page) {
+            //page.render();
+            $('body').append($(page.el));
+            $.mobile.changePage($(page.el), { changeHash: false, transition: 'none' });
+
+            if (page.visible) {
+                page.visible();
+            }
+        }
+
+    });
+
+    var initialize = function() {
+        console.log('router initialize');
+        var app_router = new AppRouter;
+        Backbone.history.start();
+        menuView.render();
+    };
+    
+    return {
+        initialize: initialize
+    };
+});
